@@ -1,0 +1,259 @@
+:root {
+  --negro: #000;
+  --blanco: #fff;
+  --dorado: #d4af37;
+  --gris: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--blanco);
+  color: var(--negro);
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--negro);
+  color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+.logo span { color: var(--dorado); }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--blanco);
+  transition: 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--dorado);
+}
+
+/* HERO */
+.page-hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://weezevent.com/wp-content/uploads/2023/02/03120229/organiser-reunion-travail.jpg") center/cover no-repeat;
+  color: var(--blanco);
+  text-align: center;
+  padding: 100px 20px;
+}
+.page-hero h1 {
+  font-size: 3rem;
+}
+.page-hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* CONTENT */
+.page-content {
+  padding: 60px 10%;
+}
+.page-content h2 {
+  text-align: center;
+  color: var(--dorado);
+  margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards, .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform .3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card i {
+  font-size: 2rem;
+  color: var(--dorado);
+  margin-bottom: 15px;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* TEAM */
+/* Equipo - Nosotros */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.member {
+  background: var(--negro);
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px; /* 🔹 ancho máximo por tarjeta */
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.member img {
+  width: 140px;   /* 🔹 tamaño fijo de la foto */
+  height: 140px;  /* 🔹 tamaño fijo de la foto */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--dorado);
+  margin-bottom: 15px;
+}
+
+.member h3 {
+  color: var(--blanco);
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.member p {
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+  background: var(--negro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Contacto */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.contact-form button {
+  background: var(--dorado);
+  color: var(--negro);
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #b8911a;
+}
+
+/* Social icons footer */
+footer .socials {
+  margin-top: 10px;
+}
+footer .socials a {
+  color: var(--dorado);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+footer .socials a:hover {
+  color: var(--blanco);
+}
+
+/* ===================== */
+/* RESPONSIVE DESIGN     */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 0;
+  }
+
+  .page-hero {
+    padding: 60px 15px;
+  }
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+  .page-hero p {
+    font-size: 1rem;
+  }
+
+  .team {
+    grid-template-columns: 1fr;
+  }
+  .cards, .grid {
+    grid-template-columns: 1fr;
+  }
+}
